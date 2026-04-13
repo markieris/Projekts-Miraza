@@ -10,7 +10,7 @@ def make_db():
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            username TEXT
+            username TEXT,
             password TEXT
         )
         
@@ -34,7 +34,7 @@ def register():
 
         conn = sqlite3.connect("users.db")
         cursor = conn.cursor()
-        cursor.execute("INSERT INTO users (usrname, password) VALUES (?, ?)", (username, password))
+        cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
         conn.commit()
         conn.close()
 
@@ -52,7 +52,7 @@ def login():
         conn = sqlite3.connect("users.db")
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM users WHERE username=? AND password=?", (username, password))
-        user = cursor.fetchcone()
+        user = cursor.fetchone()
         conn.close()
 
         if user:
