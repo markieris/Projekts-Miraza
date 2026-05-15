@@ -1,8 +1,68 @@
-<h2>Registration</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%236366f1'/><text x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='system-ui,sans-serif'>L</text></svg>">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h2>Register</h2>
+                <p>Izveido jaunu kontu</p>
+            </div>
+            
+            <form method="POST" class="login-form" id="loginForm" novalidate>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" id="username" name="username" required autocomplete="email">
+                        <label for="username">Username</label>
+                    </div>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" id="password" name="password" required autocomplete="current-password">
+                        <label for="password">Password</label>
+                        <button type="button" class="password-toggle" id="passwordToggle" aria-label="Toggle password visibility">
+                            <span class="toggle-icon"></span>
+                        </button>
+                    </div>
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <span class="btn-text">Register</span>
+                    <span class="btn-loader"></span>
+                </button>
+            </form>
+
+            <div class="signup-link">
+                <p>Have an account? <a href="/login">Sign in</a></p>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">✓</div>
+                <h3>Welcome back!</h3>
+                <p>Redirecting to your dashboard...</p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+
+
+<!--<h2>Registration</h2>
 <form method="POST">
     Username: <input type="text" name="username"><br>
     Password: <input type="text" name="password"><br>
     <button type="submit">Register</button>
 </form>
 
-<a href="/login">Go to Login</a>
+<a href="/login">Go to Login</a>-->

@@ -25,6 +25,10 @@ make_db()
 def home():
     return render_template("home.html")
 
+@app.route("/page1")
+def page1():
+    return render_template("page1.html")
+
 #Register
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -56,7 +60,7 @@ def login():
         conn.close()
 
         if user:
-            return "You Have Logged In!"
+            return redirect("/page1")
         else:
             return "Wrong Username or Password!"
         

@@ -3,20 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal Login Form</title>
-    <meta name="description" content="Ultra-minimal login form built with system fonts and the smallest possible footprint.">
-    <meta name="author" content="Aigars Silkalns / Colorlib">
-    <link rel="canonical" href="https://puikinsh.github.io/login-forms/forms/minimal/">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%236366f1'/><text x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='system-ui,sans-serif'>L</text></svg>">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Minimal Login Form">
-    <meta property="og:description" content="Ultra-minimal login form built with system fonts and the smallest possible footprint.">
-    <meta property="og:url" content="https://puikinsh.github.io/login-forms/forms/minimal/">
-    <meta property="og:image" content="https://puikinsh.github.io/login-forms/assets/screenshots/minimal.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Minimal Login Form">
-    <meta name="twitter:description" content="Ultra-minimal login form built with system fonts and the smallest possible footprint.">
-    <meta name="twitter:image" content="https://puikinsh.github.io/login-forms/assets/screenshots/minimal.png">
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
 </head>
 <body>
@@ -27,18 +14,18 @@
                 <p>Ievadi savus datus</p>
             </div>
             
-            <form class="login-form" id="loginForm" novalidate>
+            <form method="POST" class="login-form" id="loginForm" novalidate>
                 <div class="form-group">
                     <div class="input-wrapper">
-                        <input type="email" id="email" name="email" required autocomplete="email">
-                        <label for="email">Email</label>
+                        <input type="text" id="username" name="username" required autocomplete="email">
+                        <label for="username">Username</label>
                     </div>
                     <span class="error-message" id="emailError"></span>
                 </div>
 
                 <div class="form-group">
                     <div class="input-wrapper">
-                        <input type="password" id="password" name="password" required autocomplete="current-password">
+                        <input type="text" id="password" name="password" required autocomplete="current-password">
                         <label for="password">Password</label>
                         <button type="button" class="password-toggle" id="passwordToggle" aria-label="Toggle password visibility">
                             <span class="toggle-icon"></span>
@@ -58,7 +45,7 @@
                     <a href="#" class="forgot-password">Forgot password?</a>
                 </div>
 
-                <button type="POST" class="login-btn">
+                <button type="submit" class="login-btn">
                     <span class="btn-text">Sign In</span>
                     <span class="btn-loader"></span>
                 </button>
@@ -76,11 +63,9 @@
         </div>
     </div>
 
-    <script src="{{url_for('static', filename='javascript/form-utils.js')}}"></script>
-    <script src="{{url_for('static', filename='javascript/script.js')}}"></script>
+
 </body>
 </html>
-
 
 
 
